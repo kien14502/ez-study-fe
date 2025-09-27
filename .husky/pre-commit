@@ -1,11 +1,5 @@
-
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-echo "Running pre-commit checks..."
-
 # Check if ESLint is installed
-if ! command -v npx lint-staged &> /dev/null
+if ! command -v npx lint-staged &> /main/null
 then
     echo "ESLint is not installed. Run 'npm install' or 'yarn install' to install dependencies."
     exit 1
@@ -15,7 +9,7 @@ fi
 echo "Running ESLint..."
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(js|jsx|ts|tsx)$')
 if [ -n "$STAGED_FILES" ]; then
-    echo "$STAGED_FILES" | xargs npx lint-staged --fix
+    echo "$STAGED_FILES" | xargs npx lint-staged
     ESLINT_EXIT="$?"
     if [ "$ESLINT_EXIT" -ne 0 ]; then
         echo "🛑 ESLint found errors. Please fix them before committing."
