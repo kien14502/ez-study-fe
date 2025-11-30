@@ -7,7 +7,7 @@ const RegisterLayout: React.FC<ChildrenProps & {className?: string}> = ({
 }) => (
 	<div
 		className={cn(
-			'h-screen w-screen bg-[url(/images/register-bg.png)] bg-contain bg-no-repeat sm:bg-cover sm:bg-center',
+			'h-screen w-screen bg-contain bg-no-repeat sm:bg-[url(/images/register-bg.png)] sm:bg-cover sm:bg-center',
 			className,
 		)}>
 		{children}

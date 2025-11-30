@@ -52,6 +52,16 @@ const verifyForgotPassword = async (token: string) => {
 	});
 	return res.data;
 };
+
+const verifyEmail = async (token: string) => {
+	const res = await axiosInstance.get(AUTH_ENDPOINTS.VERIFY_EMAIL, {
+		params: {
+			token,
+		},
+	});
+	return res.data;
+};
+
 const resetPassword = async (payload: {token: string; password: string}) => {
 	const res = await axiosInstance.post(
 		AUTH_ENDPOINTS.RESET_PASSWORD,
@@ -75,4 +85,5 @@ export const authService = {
 	forgotPassword,
 	verifyForgotPassword,
 	resetPassword,
+	verifyEmail,
 };

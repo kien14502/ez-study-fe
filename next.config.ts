@@ -4,6 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./locale/request.ts');
 
 const nextConfig: NextConfig = {
+	output: 'standalone',
 	images: {
 		dangerouslyAllowSVG: true,
 		remotePatterns: [

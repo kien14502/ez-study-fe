@@ -1,26 +1,13 @@
 'use client';
 
-import {useCounterStore} from '@/components/providers/counter-store-provider';
-import {Button} from '@/components/ui/button';
-import {useAuthStore} from '@/stores/auth-store';
+import GreetingCard from '@/components/elements/greeting-card';
+import LearningJourney from './components/LearningJourney';
 
 export default function Home() {
-	const {count, incrementCount, decrementCount} = useCounterStore(
-		(state) => state,
-	);
-	const {logout} = useAuthStore();
-
 	return (
-		<div>
-			Count: {count}
-			<hr />
-			<Button onClick={logout}>Logout</Button>
-			<button type="button" onClick={incrementCount}>
-				Increment Count
-			</button>
-			<button type="button" onClick={decrementCount}>
-				Decrement Count
-			</button>
+		<div className="flex flex-col items-center gap-6">
+			<GreetingCard />
+			<LearningJourney />
 		</div>
 	);
 }

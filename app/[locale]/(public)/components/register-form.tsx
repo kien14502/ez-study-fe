@@ -34,40 +34,39 @@ const RegisterForm = () => {
 	};
 
 	return (
-		<div className="w-full max-w-[376px]">
-			<Form {...form}>
-				<form onSubmit={form.handleSubmit(onSubmit)}>
-					<h1 className="text-lg font-semibold">Register Form</h1>
-					<InputForm
-						label="Full Name"
-						control={form.control}
-						name={'fullName'}
-						prefix={<User size={20} />}
-					/>
-					<InputForm
-						label="Account"
-						control={form.control}
-						name={'email'}
-						prefix={<User size={20} />}
-					/>
-					<InputForm
-						type="password"
-						label="Password"
-						control={form.control}
-						name={'password'}
-						prefix={<Lock size={20} />}
-					/>
-					<InputForm
-						type="password"
-						label="Confirm Password"
-						control={form.control}
-						name={'confirmPassword'}
-						prefix={<Lock size={20} />}
-					/>
-					<Button type="submit">Register</Button>
-				</form>
-			</Form>
-		</div>
+		<Form {...form}>
+			<form
+				className="flex flex-col gap-4 px-5 sm:px-0"
+				onSubmit={form.handleSubmit(onSubmit)}>
+				<InputForm
+					label="Full Name"
+					control={form.control}
+					name={'fullName'}
+					prefix={<User size={20} />}
+				/>
+				<InputForm
+					label="Account"
+					control={form.control}
+					name={'email'}
+					prefix={<User size={20} />}
+				/>
+				<InputForm
+					type="password"
+					label="Password"
+					control={form.control}
+					name={'password'}
+					prefix={<Lock size={20} />}
+				/>
+				<InputForm
+					type="password"
+					label="Confirm Password"
+					control={form.control}
+					name={'confirmPassword'}
+					prefix={<Lock size={20} />}
+				/>
+				<Button type="submit">Register</Button>
+			</form>
+		</Form>
 	);
 };
 export default RegisterForm;

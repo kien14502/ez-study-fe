@@ -1,0 +1,10 @@
+2025/11/26 15:15:15 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:15:15 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:15:16 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:15:16 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:15:17 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:15:19 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:15:23 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:15:29 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:15:42 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1
+2025/11/26 15:16:08 [emerg] 1#1: "server" directive is not allowed here in /etc/nginx/nginx.conf:1

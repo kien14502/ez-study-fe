@@ -1,16 +1,16 @@
 'use client';
 import {removeItem, setItem} from '@/lib/app-storage';
-import {AuthSchema, LoginSchema} from '@/lib/schemas/auth-schema';
+import {LoginSchema, User} from '@/lib/schemas/auth-schema';
 import {authService} from '@/services/auth-service';
 import {create} from 'zustand';
 
 interface AuthState {
 	isAuthenticated: boolean;
-	user: AuthSchema | null;
+	user: User | null;
 	token: string | null;
 	login: (payload: LoginSchema) => void;
 	logout: () => void;
-	initialize: (user: AuthSchema | null, token: string | null) => void;
+	initialize: (user: User | null, token: string | null) => void;
 	getMe: () => void;
 }
 
@@ -47,7 +47,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 			const res = await authService.getMe();
 			set({user: res, isAuthenticated: true});
 		} catch (error) {
-			console.error('Error fetching user:', error);
+			return error;
 		}
 	},
 }));

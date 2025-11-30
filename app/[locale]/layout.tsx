@@ -50,7 +50,8 @@ export default async function LocaleLayout({params, children}: LayoutProps) {
 	return (
 		<html lang={locale}>
 			<NextIntlClientProvider locale={locale}>
-				<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+				<body
+					className={`${geistSans.variable} ${geistMono.variable} h-screen w-screen overflow-hidden antialiased`}>
 					<AppProvider>{children}</AppProvider>
 				</body>
 			</NextIntlClientProvider>

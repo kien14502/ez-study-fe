@@ -1,4 +1,9 @@
-export const PUBLIC_ROUTES = ['/login', '/register', '/forgot-password'];
+export const PUBLIC_ROUTES = [
+	'/login',
+	'/register',
+	'/forgot-password',
+	'/verify-email',
+];
 
 export enum UserRole {
 	ADMIN = 'admin',
