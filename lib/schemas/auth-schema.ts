@@ -1,19 +1,35 @@
 import z from 'zod';
 
-export const authSchema = z.object({
+export const AccountSchema = z.object({
+	_id: z.string(),
 	email: z.string().email(),
-	fullName: z.string().min(1, 'Họ tên không được rỗng'),
-	role: z.string(),
-	isActive: z.boolean().default(true),
-	avatar: z.string().url().optional(),
-	provider: z.string(),
+	createdAt: z.string().datetime(),
+	updatedAt: z.string().datetime(),
+	__v: z.number(),
+	lastLoginAt: z.string().datetime(),
 });
 
-export type AuthSchema = z.infer<typeof authSchema>;
+export const UserSchema = z.object({
+	_id: z.string(),
+	accountId: z.string(),
+	fullName: z.string(),
+	avatarUrl: z.string().nullable(),
+	dateOfBirth: z.string().datetime().nullable(),
+	role: z.enum(['student', 'teacher', 'admin']),
+	createdAt: z.string().datetime(),
+	updatedAt: z.string().datetime(),
+	__v: z.number(),
+	account: AccountSchema,
+});
+
+// Export types
+export type Account = z.infer<typeof AccountSchema>;
+export type User = z.infer<typeof UserSchema>;
 
 export const loginSchema = z.object({
 	email: z.string().email(),
 	password: z.string().min(6),
+	rememberMe: z.boolean().optional(),
 });
 
 export type LoginSchema = z.infer<typeof loginSchema>;

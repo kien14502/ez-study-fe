@@ -8,12 +8,15 @@ const intlMiddleware = createIntlMiddleware(routing);
 export function middleware(request: NextRequest) {
 	const refreshToken = request.cookies.get('refreshToken')?.value;
 	const pathname = request.nextUrl.pathname;
-	if (PUBLIC_ROUTES.includes(pathname) && refreshToken) {
+
+	const pathnameWithoutLocale = pathname.replace(/^\/(en|vi|ja|ko)/, '') || '/';
+
+	if (PUBLIC_ROUTES.includes(pathnameWithoutLocale) && refreshToken) {
 		const url = request.nextUrl.clone();
 		url.pathname = '/';
 		return NextResponse.redirect(url);
 	}
-	if (!PUBLIC_ROUTES.includes(pathname) && !refreshToken) {
+	if (!PUBLIC_ROUTES.includes(pathnameWithoutLocale) && !refreshToken) {
 		const url = request.nextUrl.clone();
 		url.pathname = '/login';
 		return NextResponse.redirect(url);

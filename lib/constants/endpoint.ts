@@ -6,7 +6,7 @@ export enum AUTH_ENDPOINTS {
 	REFRESH_TOKEN = `/auth/refresh`,
 	FORGOT_PASSWORD = `/auth/forgot-password`,
 	RESET_PASSWORD = `/auth/reset-password`,
-	VERIFY_OTP = `/auth/verify-otp`,
-	RESEND_OTP = `/auth/resend-otp`,
+	VERIFY_EMAIL = `/auth/verify-email`,
+	RESEND_OTP = `/auth/resend-email`,
 	VERIFY_FORGOT_PASSWORD = `/auth/verify-forgot-password`,
 }

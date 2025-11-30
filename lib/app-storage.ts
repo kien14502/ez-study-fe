@@ -1,5 +1,6 @@
 enum AppStorageKey {
 	ACCESS_TOKEN = 'ACCESS_TOKEN',
+	HEADER_COLLAPSE = 'HEADER_COLLAPSE',
 }
 
 const appStorage = () => {
