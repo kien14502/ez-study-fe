@@ -1,4 +1,4 @@
-FROM node:20-alpine AS builder
+FROM --platform=linux/amd64 node:20-alpine AS builder
 
 
 
@@ -16,8 +16,10 @@ COPY . ./
 
 RUN yarn exec next telemetry
 
+RUN yarn build
 
-FROM node:20-alpine AS runner
+
+FROM --platform=linux/amd64 node:20-alpine AS runner
 
 
 
